@@ -13,6 +13,7 @@
         <option value="$PROJECT_DIR$/spring_12_annotation_bean_manager/pom.xml" />
         <option value="$PROJECT_DIR$/spring_15_springMabatis/pom.xml" />
         <option value="$PROJECT_DIR$/spring_15_springMybatis/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_16_junit/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
