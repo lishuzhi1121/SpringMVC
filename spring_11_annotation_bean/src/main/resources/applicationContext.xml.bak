@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="classpath*:*.properties" system-properties-mode="NEVER"/>
+
+<!--    <bean id="bookDao" class="com.quvideo.dao.impl.BookDaoImpl">-->
+<!--        <property name="id" value="10023"/>-->
+<!--        <property name="title" value="亲密关系"/>-->
+<!--    </bean>-->
+
+<!--    <bean id="userDao" class="com.quvideo.dao.impl.UserDaoImpl">-->
+<!--        <property name="id" value="1000094"/>-->
+<!--        <property name="username" value="Sands"/>-->
+<!--    </bean>-->
+
+<!--    <bean id="bookService" class="com.quvideo.service.impl.BookServiceImpl">-->
+<!--        <property name="bookDao" ref="bookDao"/>-->
+<!--    </bean>-->
+
+<!--    <bean id="userService" class="com.quvideo.service.impl.UserServiceImpl">-->
+<!--        <property name="userDao" ref="userDao"/>-->
+<!--    </bean>-->
+
+    <context:component-scan base-package="com.quvideo"/>
+
+
+
+</beans>

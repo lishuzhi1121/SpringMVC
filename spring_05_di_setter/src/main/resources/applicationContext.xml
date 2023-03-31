@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="bookDao" class="com.quvideo.dao.impl.BookDaoImpl">
+        <property name="bookId" value="1002310"/>
+        <property name="name" value="亲密关系"/>
+        <property name="pages" value="587"/>
+    </bean>
+
+    <bean id="userDao" class="com.quvideo.dao.impl.UserDaoImpl">
+        <property name="id" value="10023"/>
+        <property name="username" value="sands"/>
+        <property name="password" value="123456"/>
+        <property name="age" value="23"/>
+        <property name="phone" value="13248374290"/>
+<!--        注入List的方式一-->
+<!--        <property name="favorites" value="football, piano, swim"/>-->
+<!--        注入List的正规方式-->
+        <property name="favorites">
+            <list>
+                <value>football</value>
+                <value>piano</value>
+                <value>swim</value>
+            </list>
+        </property>
+<!--        注入Map的错误示例-->
+<!--        <property name="schedules" value="{'Monday': 'Beijing', 'Tuesday': 'Shanghai', 'Wednesday': 'Hangzhou'}"/>-->
+<!--        注入Map的正确方式-->
+        <property name="schedules">
+            <map>
+                <entry key="Monday" value="Beijing"/>
+                <entry key="Tuesday" value="Shanghai"/>
+                <entry key="Wednesday" value="Hangzhou"/>
+                <entry key="Times" value="3"/>
+            </map>
+        </property>
+    </bean>
+    <bean id="bookService" class="com.quvideo.service.impl.BookServiceImpl">
+        <property name="bookDao" ref="bookDao"/>
+    </bean>
+    <bean id="userService" class="com.quvideo.service.impl.UserServiceImpl">
+        <property name="userDao" ref="userDao"/>
+    </bean>
+
+
+</beans>

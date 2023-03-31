@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/db_test"/>
+        <property name="username" value="tester"/>
+        <property name="password" value="test@123"/>
+    </bean>
+
+    <bean id="pooledDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="com.mysql.jdbc.Driver"/>
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/db_test"/>
+        <property name="user" value="tester"/>
+        <property name="password" value="test@123"/>
+    </bean>
+
+<!--    使用Spring加载properties文件配置信息-->
+
+<!--    1. 开启context命名空间-->
+<!--        a. 在文件头加入: xmlns:context="http://www.springframework.org/schema/context"-->
+<!--        b. 在文件头的schemaLocation中加入: http://www.springframework.org/schema/context-->
+<!--            http://www.springframework.org/schema/context/spring-context.xsd-->
+<!--    -->
+
+<!--    2. 使用context命名空间, 加载properties文件-->
+<!--    location属性表示properties文件路径,加载多个properties文件时可以用逗号分割-->
+<!--    system-properties-mode属性表示系统属性的加载模式,为了避免冲突,一般不加载系统属性,设置为"NEVER"-->
+<!--    <context:property-placeholder location="application.properties, jdbc.properties" system-properties-mode="NEVER"/>-->
+<!--    但最好的方式时使用通配符 *.properties 加载所有配置文件-->
+<!--    <context:property-placeholder location="*.properties" system-properties-mode="NEVER"/>-->
+<!--    更规范的写法是加上classpath:路径-->
+<!--    <context:property-placeholder location="classpath:*.properties" system-properties-mode="NEVER"/>-->
+<!--    如有需要读取依赖的jar包中的配置文件, 最好的写法是使用 classpath*:*.properties-->
+    <context:property-placeholder location="classpath*:*.properties" system-properties-mode="NEVER"/>
+
+<!--    3. 使用 ${} 读取加载的属性值-->
+    <bean id="propertyDataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="${jdbc.driver}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+
+    <bean id="bookDao" class="com.quvideo.dao.impl.BookDaoImpl">
+        <property name="name" value="${book.name}"/>
+    </bean>
+
+
+</beans>

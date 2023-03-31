@@ -34,7 +34,8 @@ replay_pid*
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -54,6 +55,15 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+### IntelliJ IDEA ###
+.idea/modules.xml
+.idea/jarRepositories.xml
+.idea/compiler.xml
+.idea/libraries/
+*.iws
+*.iml
+*.ipr
 
 ### macOS Patch ###
 # iCloud generated files
