@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <type id="Spring" />
+  </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
@@ -14,6 +17,12 @@
         <option value="$PROJECT_DIR$/spring_15_springMabatis/pom.xml" />
         <option value="$PROJECT_DIR$/spring_15_springMybatis/pom.xml" />
         <option value="$PROJECT_DIR$/spring_16_junit/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_17_aop_demo/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_18_aop_quickstart/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_20_advice_type/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_21_aop_interface_runspeed/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_20_aop_advice_type/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_22_aop_advice_getdata/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
