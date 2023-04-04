@@ -24,11 +24,19 @@
         <option value="$PROJECT_DIR$/spring_20_aop_advice_type/pom.xml" />
         <option value="$PROJECT_DIR$/spring_22_aop_advice_getdata/pom.xml" />
         <option value="$PROJECT_DIR$/spring_24_case_transfer/pom.xml" />
+        <option value="$PROJECT_DIR$/springmvc_00_demo/pom.xml" />
+        <option value="$PROJECT_DIR$/springmvc_00_servlet_demo/pom.xml" />
+        <option value="$PROJECT_DIR$/springmvc_01_quickstart/pom.xml" />
+        <option value="$PROJECT_DIR$/springmvc_02_bean_load/pom.xml" />
+        <option value="$PROJECT_DIR$/springmvc_04_request_param/pom.xml" />
+        <option value="$PROJECT_DIR$/springmvc_05_response/pom.xml" />
+        <option value="$PROJECT_DIR$/springmvc_06_rest/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/springmvc_00_demo/pom.xml" />
       </set>
     </option>
   </component>
