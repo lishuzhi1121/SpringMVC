@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.PropertySource;
 
 import javax.sql.DataSource;
-@PropertySource("jdbc.properties")
+@PropertySource("classpath:jdbc.properties")
 public class JdbcConfig {
     /**
      * 第三方Bean的依赖注入
