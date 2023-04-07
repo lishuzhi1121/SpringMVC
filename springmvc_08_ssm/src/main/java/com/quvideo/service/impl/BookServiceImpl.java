@@ -41,14 +41,24 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public Book getById(Integer id) {
-        if (id == 1) {
-            throw new BusinessException(Code.BUSINESS_ERR, "这不是一个正常的id, 根本无法处理！！！");
-        }
+//        if (id == 1) {
+//            throw new BusinessException(Code.BUSINESS_ERR, "这不是一个正常的id, 根本无法处理！！！");
+//        }
 //        try {
 //            int i = 1/0;
 //        } catch (Exception ex) {
 //            throw new SystemException(Code.SYSTEM_TIMEOUT_ERR, "服务器访问超时, 请稍后再试!!");
 //        }
         return bookDao.getById(id);
+    }
+
+    @Override
+    public Book getByName(String name) {
+        return bookDao.getByName(name);
+    }
+
+    @Override
+    public List<Book> getByNameKeyword(String keyword) {
+        return bookDao.getByNameKeyword(keyword);
     }
 }

@@ -46,4 +46,20 @@ public class BookController {
         return new Result(code, msg, book);
     }
 
+    @GetMapping("/name/{name}")
+    public Result getByName(@PathVariable String name) {
+        Book book = bookService.getByName(name);
+        Integer code = book == null ? Code.GET_ERR : Code.GET_OK;
+        String msg = book == null ? "数据查询失败, 请检查请求参数后重试！": null;
+        return new Result(code, msg, book);
+    }
+
+    @GetMapping("/keyword/{keyword}")
+    public Result getByNameKeyword(@PathVariable String keyword) {
+        List<Book> books = bookService.getByNameKeyword(keyword);
+        Integer code = books == null ? Code.GET_ERR : Code.GET_OK;
+        String msg = books == null ? "数据查询失败, 请检查请求参数后重试！": null;
+        return new Result(code, msg, books);
+    }
+
 }

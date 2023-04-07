@@ -1,5 +1,6 @@
 package com.quvideo.config;
 
+import com.quvideo.controller.interceptor.HttpServletRequestReplacedFilter;
 import jakarta.servlet.Filter;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
@@ -25,8 +26,11 @@ public class ServletInitConfig extends AbstractAnnotationConfigDispatcherServlet
      */
     @Override
     protected Filter[] getServletFilters() {
+        // 字符集过滤器
         CharacterEncodingFilter filter = new CharacterEncodingFilter("UTF-8");
         filter.setForceEncoding(true);
-        return new Filter[]{filter};
+        // POST和PUT请求, 处理InputStream过滤器
+        HttpServletRequestReplacedFilter requestReplacedFilter = new HttpServletRequestReplacedFilter();
+        return new Filter[]{filter, requestReplacedFilter};
     }
 }

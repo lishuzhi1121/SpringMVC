@@ -20,5 +20,9 @@ public interface BookDao {
     public List<Book> getAll();
     @Select("SELECT * FROM t_book WHERE id = #{id}")
     public Book getById(Integer id);
+    @Select("SELECT * FROM t_book WHERE name = #{name}")
+    public Book getByName(String name);
+    @Select("SELECT * FROM t_book WHERE name LIKE CONCAT('%', #{keyword}, '%')")
+    public List<Book> getByNameKeyword(String keyword);
 
 }
